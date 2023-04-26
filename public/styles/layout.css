@@ -26,7 +26,6 @@ main {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-around;
   flex-direction: column;
   background-color: #f4f1ec;
 }
