@@ -9,3 +9,9 @@ nav {
 nav span {
   font-family: 'Bungee', cursive;
 }
+
+nav .navNewTweet {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
