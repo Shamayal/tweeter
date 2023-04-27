@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+/* box-shadow when mouse hovers over tweet box */
+.tweet:hover {
+  box-shadow: 7px 7px #C9CAE2;
+}
 /* spacing for the icon, name and, username */
 .tweet header {
   display: flex;
@@ -35,6 +39,7 @@
 .tweet h4 {
   color: #C7CDE4;
 }
+#C9CAE2
 
 /* tweet text and bottom line */
 .tweet-message {
