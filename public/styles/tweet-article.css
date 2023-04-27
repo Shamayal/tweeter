@@ -1,7 +1,54 @@
 /* border around tweet article */
 .tweet {
-  padding: 1em;
-  border: 5px solid #545149;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border: 3px solid #545149;
   margin-top: 2.5em;
-  margin-bottom: 1.5em;  
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+
+/* spacing for the icon, name and, username */
+.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* spacing for the icon and name */
+.icon-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* icon image size */
+.icon-name img {
+  max-width: 45%;
+  height: 45%;
+}
+
+.tweet h4 {
+  margin: 0.5em;
+}
+
+
+/* spacing for the date and icons */
+.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* date posted font size */
+.tweet footer h6 {
+  font-size: small;
+  margin-left: 1em;
+  margin-bottom: 1.7em;
+}
+
+/* spacing between icons */
+.icons i {
+  padding: 0.2em;
 }
