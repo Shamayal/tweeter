@@ -1,3 +1,4 @@
+/* form container margin */
 .new-tweet {
   width: 100%;
   display: flex;
@@ -8,6 +9,7 @@
   margin-top: 2em;
 }
 
+/* Tweet button and counter spacing */
 .button-counter-bar {
   display: flex;
   flex-direction: row;
@@ -16,14 +18,33 @@
   padding-top: 0.5em;
 }
 
+/* width for the form box */
 .form-bar {
   width: 100%;
 }
 
+/* styling for the form box with line at bottom */
 #tweet-text {
   width: 100%;
+  background: transparent;
+  resize: none;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+  border: none;
+  border-bottom: 5px solid #545149;
 }
 
+/* placeholder text color */
+#tweet-text::placeholder {
+  color: #545149;
+}
+
+/* gets rid of the blue outline around form */
+#tweet-text:focus {
+  outline: none;
+}
+
+/* Tweet button */
 .new-tweet button {
   background-color: #4056A1;
   font-family: 'Bungee', cursive;
@@ -32,19 +53,7 @@
   padding: 0.2em 0.6em;
 }
 
+/* counter text */
 .counter {
   font-family: 'Bungee', cursive;
 }
-
-/* 
-<section class="new-tweet">
-<h2>Compose Tweet</h2>
-<form method="POST" action="/tweets/">
-  <label for="tweet-text">What are you humming about?</label>
-  <textarea name="text" id="tweet-text"></textarea>
-  <div>
-    <button type="submit">Tweet</button>
-    <output name="counter" class="counter" for="tweet-text">140</output>
-  </div>
-</form>
-</section> */
