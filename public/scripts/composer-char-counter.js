@@ -2,6 +2,7 @@
 
 $(document).ready(function() {
   $("#tweet-text").on("keyup", function() {
-    console.log(this);
+
+    console.log(this.value.length);
   });
 });
