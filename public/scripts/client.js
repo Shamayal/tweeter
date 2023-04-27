@@ -21,6 +21,30 @@ $(document).ready(function() {
     "created_at": 1461116232227
   }
 
+  // loops through tweets and calls the createTweetElement for each tweet
+  const renderTweets = function(tweets) {
+    // empty the tweets container
+    $('#tweets-container').empty();
+    // loop through tweets
+    for (let tweet of tweets) {
+      let $
+    }
+    //empty out tweets container 
+    //callback createTweetElement(tweet)
+    // append
+
+    // loops through tweets
+    // calls createTweetElement for each tweet
+    // takes return value and appends it to the tweets container
+
+      // const $tweet = createTweetElement(tweetData);
+
+  // Test / driver code (temporary)
+  $('#tweets-container').append($tweet); 
+
+  }
+  
+  // creates the tweet element based on data in the object
   const createTweetElement = function(tweet) {
     let $tweet = `
     <article class="tweet">
@@ -46,17 +70,5 @@ $(document).ready(function() {
     return $tweet;
   }
 
-  const $tweet = createTweetElement(tweetData);
-
-  // Test / driver code (temporary)
-  $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
-
-  // const renderTweets = function(tweets) {
-  //   // loops through tweets
-  //   // calls createTweetElement for each tweet
-  //   // takes return value and appends it to the tweets container
-  // }
-
-// renderTweets(data);
+  renderTweets(data);
 }); 
