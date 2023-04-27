@@ -57,3 +57,7 @@
 .counter {
   font-family: 'Bungee', cursive;
 }
+
+.exceed-limit {
+  color: red;
+}
