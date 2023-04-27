@@ -2,7 +2,7 @@
 .tweet {
   padding-left: 0.5em;
   padding-right: 0.5em;
-  border: 3px solid #545149;
+  border: 4px solid #545149;
   margin-top: 2.5em;
   margin-bottom: 1.5em;
   width: 100%;
@@ -13,6 +13,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 /* spacing for the icon and name */
@@ -29,8 +31,19 @@
   height: 45%;
 }
 
+/* username color and weight  */
 .tweet h4 {
-  margin: 0.5em;
+  color: #C7CDE4;
+}
+
+/* tweet text and bottom line */
+.tweet-message {
+  padding-bottom: 1em;
+  border-bottom: 4px solid #545149;
+  margin-bottom: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
 }
 
 
@@ -39,12 +52,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 /* date posted font size */
 .tweet footer h6 {
   font-size: small;
-  margin-left: 1em;
+  margin-top: 1em;
   margin-bottom: 1.7em;
 }
 
