@@ -1,0 +1,7 @@
+/* border around tweet article */
+.tweet {
+  padding: 1em;
+  border: 5px solid #545149;
+  margin-top: 2.5em;
+  margin-bottom: 1.5em;  
+}
