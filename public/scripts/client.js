@@ -9,6 +9,14 @@
 
 $(document).ready(function() {
 
+  // event listener for submit with preventDefault() inside the handler function
+  $(".form-bar").on("submit", function(event) {
+    event.preventDefault();
+    // serialize turns set of form data into a query string
+    let data = $(this).serialize();
+    $.post("/tweets", data);
+  });
+
   const tweetData =  {
     "user": {
       "name": "Newton",
@@ -25,23 +33,12 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     // empty the tweets container
     $('#tweets-container').empty();
-    // loop through tweets
-    for (let tweet of tweets) {
-      let $
+    // loop through tweets and callback to createTweetElement
+    for (let tweet in tweets) {
+      let $tweet = createTweetElement(tweet);
+      // appends return value to tweets container
+      $('#tweets-container').append($tweet); 
     }
-    //empty out tweets container 
-    //callback createTweetElement(tweet)
-    // append
-
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-
-      // const $tweet = createTweetElement(tweetData);
-
-  // Test / driver code (temporary)
-  $('#tweets-container').append($tweet); 
-
   }
   
   // creates the tweet element based on data in the object
@@ -70,5 +67,5 @@ $(document).ready(function() {
     return $tweet;
   }
 
-  renderTweets(data);
+  renderTweets(tweetData);
 }); 
