@@ -1,3 +1,6 @@
+#tweets-container {
+  width: 100%;
+}
 /* border around tweet article */
 .tweet {
   padding-left: 0.5em;
