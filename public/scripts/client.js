@@ -42,7 +42,6 @@ $(document).ready(function() {
       }).then(function() {
         loadTweets();
         $("#tweet-text").val("");
-        console.log(data);
       });
     }
   });
