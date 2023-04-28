@@ -60,11 +60,20 @@
     <main class="container">
       <!-- new tweet form -->
       <section class="new-tweet">
-        <div class=""error-message>
+        <!-- error: too many characters -->
+        <div type="hidden" class=""error-message>
           <i class="fa-solid fa-triangle-exclamation" style="color: #ff1200;"></i>
-          <h2>Error:$ please try again!</h2>
+          <p>Error: You have exceeded the maximum number of characters allowed for a tweet!</p>
           <i class="fa-solid fa-triangle-exclamation" style="color: #ff1200;"></i>
         </div>
+        <!-- error: empty tweet -->
+        <div type="hidden" class=""error-message>
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff1200;"></i>
+          <p>Error: Please write something to post a tweet!</p>
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff1200;"></i>
+        </div>
+
+        <!-- submit a new tweet -->
         <form class="form-bar" method="POST" action="/tweets/">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?" rows="1"></textarea>
           <div class="button-counter-bar">
