@@ -9,17 +9,6 @@
 
 $(document).ready(function() {
 
-    //let data = $.post("/tweets", $(this).serialize());
-
-    // event listener for submit with preventDefault() inside the handler function
-    $(".form-bar").on("submit", function(event) {
-      event.preventDefault();
-      // serialize turns set of form data into a query string
-      let data = $(this).serialize();
-      console.log(data);
-      $.ajax({type: "POST", url: "/tweets", data, dataType: "text"});
-    });
-
   const tweetData =  {
     "user": {
       "name": "Newton",
@@ -31,6 +20,17 @@ $(document).ready(function() {
       },
     "created_at": 1461116232227
   }
+
+  //let data = $.post("/tweets", $(this).serialize());
+
+  // event listener for submit with preventDefault() inside the handler function
+  $(".form-bar").on("submit", function(event) {
+    event.preventDefault();
+    // serialize turns set of form data into a query string
+    let data = $(this).serialize();
+    console.log(data);
+    $.ajax({method: "POST", url: "/tweets", data, dataType: "text"});
+  });
 
   // loops through tweets and calls the createTweetElement for each tweet
   const renderTweets = function(tweets) {
@@ -70,5 +70,11 @@ $(document).ready(function() {
     return $tweet;
   }
 
+  // // makes requests to /tweets
+  const loadTweets = function() {
+    $.ajax("/tweets", {method: "GET"});
+
+  }
+  
   renderTweets(tweetData);
 }); 
