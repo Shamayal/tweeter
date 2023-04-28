@@ -63,7 +63,7 @@ $(document).ready(function() {
     return $tweet;
   }
 
-  // // makes requests to load tweets upon page load
+  // makes requests to load tweets upon page load
   const loadTweets = function() {
     $.ajax("/tweets", {method: "GET"})
     .then(data => {renderTweets(data)})
