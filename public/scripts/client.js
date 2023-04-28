@@ -23,14 +23,15 @@ $(document).ready(function() {
     // serialize turns set of form data into a query string
     let data = $(this).serialize();
 
-    let tweetInput = $(".tweet-message").value.length;
-    if (tweetInput > 140) {
+    let tweetInput = $("#tweet-text").val();
+    if (tweetInput.length >= 141) {
       alert("You have exceeded the maximum number of characters allowed for a tweet!");
-    } else if (tweetInput === 0 || tweetInput === null) {
+    } else if (tweetInput.length === 0) {
       alert("Please write something to post a tweet!");
     } else {
       $.ajax({method: "POST", url: "/tweets", data, dataType: "text"});
     }
+    console.log(tweetInput.length)
   });
 
   // loops through tweets and calls the createTweetElement for each tweet
