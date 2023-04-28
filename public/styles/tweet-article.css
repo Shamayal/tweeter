@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+.tweet-message {
+  width: 100%;
+}
+
 /* box-shadow when mouse hovers over tweet box */
 .tweet:hover {
   box-shadow: 7px 7px #C9CAE2;
