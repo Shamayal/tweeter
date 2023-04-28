@@ -17,6 +17,7 @@ const tweetData =  {
 };
 
 $(document).ready(function() {
+  
   // event listener for submit with preventDefault() inside the handler function
   $(".form-bar").on("submit", function(event) {
     event.preventDefault();
@@ -34,6 +35,14 @@ $(document).ready(function() {
       // serialize turns set of form data into a query string
       let data = $(this).serialize();
 
+      // slide up error messages
+      if ($(".error-message-max").first().is(":visible")) {
+        $(".error-message-max").slideUp();
+      }
+      if ($(".error-message-null").first().is(":visible")) {
+        $(".error-message-null").slideUp();
+      }
+    
       // post request to send data to server
       $.ajax({
         method: "POST",

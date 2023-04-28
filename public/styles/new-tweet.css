@@ -21,6 +21,7 @@
 /* width for the form box */
 .form-bar {
   width: 100%;
+  margin-top: 1em;
 }
 
 /* styling for the form box with line at bottom */
