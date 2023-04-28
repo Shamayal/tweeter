@@ -47,6 +47,13 @@ $(document).ready(function() {
     }
   });
 
+  // prevent XSS with escaping
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   // loops through tweets and calls the createTweetElement for each tweet
   const renderTweets = function(tweets) {
     // resets the tweets container
@@ -70,7 +77,7 @@ $(document).ready(function() {
         </span>
         <h4>${tweetData.user.handle}</h4>
       </header>
-      <p class="tweet-message">${tweetData.content.text}</p>
+      <p class="tweet-message">${escape(tweetData.content.text)}</p>
       <footer>
         <h6>${timeago.format(tweetData.created_at)}</h6>
         <span class="icons">
@@ -93,6 +100,7 @@ $(document).ready(function() {
       renderTweets(data);
     });
   };
-  
-  renderTweets(tweetData);
+
+  loadTweets();
+
 });
