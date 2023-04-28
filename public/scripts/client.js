@@ -22,15 +22,23 @@ $(document).ready(function() {
     event.preventDefault();
     // serialize turns set of form data into a query string
     let data = $(this).serialize();
-    $.ajax({method: "POST", url: "/tweets", data, dataType: "text"});
+
+    let tweetInput = $(".tweet-message").value.length;
+    if (tweetInput > 140) {
+      alert("You have exceeded the maximum number of characters allowed for a tweet!");
+    } else if (tweetInput === 0 || tweetInput === null) {
+      alert("Please write something to post a tweet!");
+    } else {
+      $.ajax({method: "POST", url: "/tweets", data, dataType: "text"});
+    }
   });
 
   // loops through tweets and calls the createTweetElement for each tweet
   const renderTweets = function(tweets) {
-    // empty the tweets container
+    // resets the tweets container
     $('#tweets-container').empty();
     // loop through tweets and callback to createTweetElement
-    for (let tweet of tweets) {
+    for (let tweet in tweets) {
       let $tweet = createTweetElement(tweet);
       // appends return value to tweets container
       $('#tweets-container').append($tweet); 
@@ -69,7 +77,5 @@ $(document).ready(function() {
     .then(data => {renderTweets(data)})
   }
   
-  console.log(loadTweets());
-
   renderTweets(tweetData);
-}); 
+});
