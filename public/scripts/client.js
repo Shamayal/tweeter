@@ -22,12 +22,13 @@ $(document).ready(function() {
     event.preventDefault();
 
     let tweetInput = $("#tweet-text").val();
+
     // error if tweet more than 140 characters
     if (tweetInput.length >= 141) {
-      alert("You have exceeded the maximum number of characters allowed for a tweet!");
+      $(".error-message-max").slideDown();
       // error if no input
     } else if (tweetInput.length === 0) {
-      alert("Please write something to post a tweet!");
+      $(".error-message-null").slideDown();
     } else {
 
       // serialize turns set of form data into a query string
@@ -98,6 +99,10 @@ $(document).ready(function() {
     }).then(data => {
       renderTweets(data);
     });
+
+    // hide error messages
+    $(".error-message-max").hide();
+    $(".error-message-null").hide();
   };
 
   loadTweets();
