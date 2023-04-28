@@ -5,33 +5,42 @@
  */
 
 const tweetData =  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-    "created_at": 1461116232227
-  }
+  "user": {
+    "name": "Newton",
+    "avatars": "https://i.imgur.com/73hZDYK.png",
+    "handle": "@SirIsaac"
+  },
+  "content": {
+    "text": "If I have seen further it is by standing on the shoulders of giants"
+  },
+  "created_at": 1461116232227
+};
 
 $(document).ready(function() {
   // event listener for submit with preventDefault() inside the handler function
   $(".form-bar").on("submit", function(event) {
     event.preventDefault();
-    // serialize turns set of form data into a query string
-    let data = $(this).serialize();
 
     let tweetInput = $("#tweet-text").val();
+    // error if tweet more than 140 characters
     if (tweetInput.length >= 141) {
       alert("You have exceeded the maximum number of characters allowed for a tweet!");
+      // error if no input
     } else if (tweetInput.length === 0) {
       alert("Please write something to post a tweet!");
     } else {
-      $.ajax({method: "POST", url: "/tweets", data, dataType: "text"});
+
+      // serialize turns set of form data into a query string
+      let data = $(this).serialize();
+
+      // post request to send data to server
+      $.ajax({method: "POST", url: "/tweets", data, dataType: "text"})
+      .then(function() {
+        loadTweets();
+        $("#tweet-text").val("");
+        console.log(data);
+      });
     }
-    console.log(tweetInput.length)
   });
 
   // loops through tweets and calls the createTweetElement for each tweet
@@ -39,15 +48,15 @@ $(document).ready(function() {
     // resets the tweets container
     $('#tweets-container').empty();
     // loop through tweets and callback to createTweetElement
-    for (let tweet in tweets) {
+    for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-      // appends return value to tweets container
-      $('#tweets-container').append($tweet); 
+      // adds return value to tweets container
+      $('#tweets-container').prepend($tweet);
     }
-  }
+  };
   
   // creates the tweet element based on data in the object
-  const createTweetElement = function(tweet) {
+  const createTweetElement = function(tweetData) {
     let $tweet = `
     <article class="tweet">
       <header>
