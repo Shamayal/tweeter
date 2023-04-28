@@ -9,13 +9,16 @@
 
 $(document).ready(function() {
 
-  // event listener for submit with preventDefault() inside the handler function
-  $(".form-bar").on("submit", function(event) {
-    event.preventDefault();
-    // serialize turns set of form data into a query string
-    let data = $(this).serialize();
-    $.post("/tweets", data);
-  });
+    //let data = $.post("/tweets", $(this).serialize());
+
+    // event listener for submit with preventDefault() inside the handler function
+    $(".form-bar").on("submit", function(event) {
+      event.preventDefault();
+      // serialize turns set of form data into a query string
+      let data = $(this).serialize();
+      console.log(data);
+      $.ajax({type: "POST", url: "/tweets", data, dataType: "text"});
+    });
 
   const tweetData =  {
     "user": {
