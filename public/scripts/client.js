@@ -4,12 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// function that takes in tweet object and returns a tweet <article> element containing HTML structure of the tweet
-// createTweetElement
-
-$(document).ready(function() {
-
-  const tweetData =  {
+const tweetData =  {
     "user": {
       "name": "Newton",
       "avatars": "https://i.imgur.com/73hZDYK.png",
@@ -21,14 +16,12 @@ $(document).ready(function() {
     "created_at": 1461116232227
   }
 
-  //let data = $.post("/tweets", $(this).serialize());
-
+$(document).ready(function() {
   // event listener for submit with preventDefault() inside the handler function
   $(".form-bar").on("submit", function(event) {
     event.preventDefault();
     // serialize turns set of form data into a query string
     let data = $(this).serialize();
-    console.log(data);
     $.ajax({method: "POST", url: "/tweets", data, dataType: "text"});
   });
 
@@ -37,7 +30,7 @@ $(document).ready(function() {
     // empty the tweets container
     $('#tweets-container').empty();
     // loop through tweets and callback to createTweetElement
-    for (let tweet in tweets) {
+    for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
       // appends return value to tweets container
       $('#tweets-container').append($tweet); 
@@ -72,9 +65,11 @@ $(document).ready(function() {
 
   // // makes requests to /tweets
   const loadTweets = function() {
-    $.ajax("/tweets", {method: "GET"});
-
+    $.ajax("/tweets", {method: "GET"})
+    .then(data => {renderTweets(data)})
   }
   
+  console.log(loadTweets());
+
   renderTweets(tweetData);
 }); 
