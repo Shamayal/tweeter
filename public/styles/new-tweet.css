@@ -64,19 +64,40 @@
 }
 
 /* error message styling */
-.error-message {
+.error-message-max {
   display: flex;
   flex-direction: row;
   align-items: center;
   border: 3px solid #ff1200;
+  margin-bottom: 2em;
 }
 
 /* margin around error message */
-.error-message p {
+.error-message-max p {
   margin: 0;
 }
 
 /* spacing between icons and error message*/
-.error-message i {
+.error-message-max i {
+  padding: 0.5em;
+}
+
+
+/* error message styling */
+.error-message-null {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 3px solid #ff1200;
+  margin-bottom: 2em;
+}
+
+/* margin around error message */
+.error-message-null p {
+  margin: 0;
+}
+
+/* spacing between icons and error message*/
+.error-message-null i {
   padding: 0.5em;
 }
