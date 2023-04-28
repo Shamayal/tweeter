@@ -34,8 +34,12 @@ $(document).ready(function() {
       let data = $(this).serialize();
 
       // post request to send data to server
-      $.ajax({method: "POST", url: "/tweets", data, dataType: "text"})
-      .then(function() {
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data,
+        dataType: "text",
+      }).then(function() {
         loadTweets();
         $("#tweet-text").val("");
         console.log(data);
@@ -79,13 +83,16 @@ $(document).ready(function() {
     `;
 
     return $tweet;
-  }
+  };
 
   // makes requests to load tweets upon page load
   const loadTweets = function() {
-    $.ajax("/tweets", {method: "GET"})
-    .then(data => {renderTweets(data)})
-  }
+    $.ajax("/tweets", {
+      method: "GET",
+    }).then(data => {
+      renderTweets(data);
+    });
+  };
   
   renderTweets(tweetData);
 });
