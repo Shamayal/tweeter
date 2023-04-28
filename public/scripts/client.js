@@ -50,7 +50,7 @@ $(document).ready(function() {
       </header>
       <p class="tweet-message">${tweetData.content.text}</p>
       <footer>
-        <h6>${tweetData.created_at}</h6>
+        <h6>${timeago.format(tweetData.created_at)}</h6>
         <span class="icons">
           <i class="fa-solid fa-flag";></i>
           <i class="fa-solid fa-retweet";></i>
