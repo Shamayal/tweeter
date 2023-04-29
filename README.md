@@ -16,6 +16,10 @@ This is what the homepage of Tweeter looks like on a mobile device. The user's n
 
 !["The homepage of Tweeter on mobile."](https://github.com/Shamayal/tweeter/blob/master/docs/homepage-mobile.png)
 
+This is what the responsive design between the desktop, tablet, and mobile layouts looks like.
+
+!["The homepage of Tweeter on mobile."](https://github.com/Shamayal/tweeter/blob/master/docs/responsive-design.gif)
+
 You can write a new tweet and see how many characters you have left. The tweet button allows you to post it to the feed.
 
 !["Write and post a new tweet."](https://github.com/Shamayal/tweeter/blob/master/docs/write-new-tweet.gif)
