@@ -1,4 +1,4 @@
-/* form container margin */
+/* tweet form container margin */
 .new-tweet {
   width: 100%;
   display: flex;
@@ -9,7 +9,7 @@
   margin-top: 2em;
 }
 
-/* Tweet button and counter spacing */
+/* tweet button and counter spacing */
 .button-counter-bar {
   display: flex;
   flex-direction: row;
@@ -45,7 +45,7 @@
   outline: none;
 }
 
-/* Tweet button */
+/* Tweet button styling */
 .new-tweet button {
   background-color: #4056A1;
   font-family: 'Bungee', cursive;
@@ -54,7 +54,7 @@
   padding: 0.2em 0.6em;
 }
 
-/* counter text */
+/* counter font */
 .counter {
   font-family: 'Bungee', cursive;
 }
@@ -64,7 +64,7 @@
   color: #ff1200;
 }
 
-/* error message styling */
+/* error message max styling */
 .error-message-max {
   display: flex;
   flex-direction: row;
@@ -73,18 +73,18 @@
   margin-bottom: 2em;
 }
 
-/* margin around error message */
+/* margin around error message max */
 .error-message-max p {
   margin: 0;
 }
 
-/* spacing between icons and error message*/
+/* spacing between icons and error message max */
 .error-message-max i {
   padding: 0.5em;
 }
 
 
-/* error message styling */
+/* error message null styling */
 .error-message-null {
   display: flex;
   flex-direction: row;
@@ -93,12 +93,12 @@
   margin-bottom: 2em;
 }
 
-/* margin around error message */
+/* margin around error message null */
 .error-message-null p {
   margin: 0;
 }
 
-/* spacing between icons and error message*/
+/* spacing between icons and error message null */
 .error-message-null i {
   padding: 0.5em;
 }

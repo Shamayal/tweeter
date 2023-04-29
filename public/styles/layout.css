@@ -14,6 +14,7 @@ html {
  * Global layout stuff
  */
 
+/* background and main font style and color */
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -21,6 +22,7 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+/* container for tweets and tweet form */
 main {
   width: 90%;
   margin: 0 auto;
@@ -30,6 +32,7 @@ main {
   background-color: #f4f1ec;
 }
 
+/* formatting for desktop */
 @media only screen and (min-width: 768px) {
 
   .layout-shifter {
@@ -48,6 +51,7 @@ main {
   }
 }
 
+/* formatting for tablet and phone devices */
 @media only screen and (max-width: 767px) {
   
   /* changes the nav bar to match the header */

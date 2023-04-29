@@ -1,7 +1,9 @@
+/* tweet formatting */
 #tweets-container {
   width: 100%;
 }
-/* border around tweet article */
+
+/* border around tweet */
 .tweet {
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -11,16 +13,17 @@
   width: 100%;
 }
 
+/* tweet formatting */
 .tweet-message {
   width: 100%;
 }
 
-/* box-shadow when mouse hovers over tweet box */
+/* box-shadow when mouse hovers over tweet */
 .tweet:hover {
   box-shadow: 7px 7px #C9CAE2;
 }
 
-/* spacing for the icon, name and, username */
+/* spacing for the icon, name and, username - header */
 .tweet header {
   display: flex;
   flex-direction: row;
@@ -29,7 +32,7 @@
   margin-right: 0.5em;
 }
 
-/* spacing for the icon and name */
+/* spacing for the icon and name - left side of header */
 .icon-name {
   display: flex;
   flex-direction: row;
@@ -43,7 +46,7 @@
   height: 45%;
 }
 
-/* username color and weight  */
+/* username color and weight - right side of header */
 .tweet h4 {
   color: #C9CAE2;
 }
@@ -58,8 +61,7 @@
   width: 100%;
 }
 
-
-/* spacing for the date and icons */
+/* spacing for the date and icons - footer */
 .tweet footer {
   display: flex;
   justify-content: space-between;
@@ -68,19 +70,20 @@
   margin-right: 1em;
 }
 
-/* date posted font size */
+/* date posted font size - left side of footer */
 .tweet footer h6 {
   font-size: small;
   margin-top: 1em;
   margin-bottom: 1.7em;
 }
 
-/* spacing between icons */
+/* spacing between icons - right side of footer */
 .icons i {
   padding: 0.2em;
   color: #4056a1;
 }
 
+/* color change when mouse hovers over icon */
 .icons i:hover {
   color: #CB9922;
 }

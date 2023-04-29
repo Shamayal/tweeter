@@ -1,3 +1,4 @@
+/* navigation bar (fixed) background and formatting */
 nav {
   background-color: #4056A1;
   height: 120px;
@@ -12,11 +13,13 @@ nav {
   z-index: 9999;
 }
 
+/* Tweeter logo text font */
 .logo {
   font-family: 'Bungee', cursive;
   font-size: xxx-large;
 }
 
+/* write a new tweet text and arrow icon formatting */
 .nav-text {
   display: flex;
   flex-direction: column;
