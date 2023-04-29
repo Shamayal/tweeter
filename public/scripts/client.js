@@ -62,7 +62,7 @@ $(document).ready(function() {
     for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
       // adds return value to tweets container
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
   };
   
