@@ -30,6 +30,32 @@ main {
   background-color: #f4f1ec;
 }
 
+@media only screen and (min-width: 768px) {
+
+  /* display: non for nav bar */
+  .layout-shifter {
+    display: flex;
+    flex-direction: row;
+    margin-top: 150px;
+  }
+
+  .container {
+    margin: 50px;
+  }
+
+  .userHeader {
+    margin: 150px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  
+  body nav {
+    background-color: #DC9E2A;
+    background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+  }
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
