@@ -6,6 +6,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 Users are able to write and post tweets with a character limit of 140. They are generated with a name, username, and avatar and displayed on the webpage along with other past tweets.
 
+## Final Product
+
 This is what the homepage of Tweeter looks like on a desktop. The user's name and avatar are shown on the left. The tweets and form to write a new tweet are on the right.
 
 !["The homepage of Tweeter on desktop."](https://github.com/Shamayal/tweeter/blob/master/docs/homepage-desktop.png)
@@ -16,17 +18,15 @@ This is what the homepage of Tweeter looks like on a mobile device. The user's n
 
 You can write a new tweet and see how many characters you have left. The tweet button allows you to post it to the feed.
 
-!["The homepage of Tweeter on mobile."](https://github.com/Shamayal/tweeter/blob/master/docs/write-new-tweet.png)
+!["Write and post a new tweet."](https://github.com/Shamayal/tweeter/blob/master/docs/write-new-tweet.gif)
 
-This is what the homepage of Tweeter looks like on a mobile device. The user's name and avatar are shown on top with the form and tweets below it.
+You can hover over the tweets and the flag, retweet, and like icons in the tweet box.
 
-!["The homepage of Tweeter on mobile."](https://github.com/Shamayal/tweeter/blob/master/docs/new-tweet-posted.png)
+!["Hover over the tweet to see a box-shadow and color change for the icons."](https://github.com/Shamayal/tweeter/blob/master/docs/tweet-hover.gif)
 
-This is what the homepage of Tweeter looks like on a mobile device. The user's name and avatar are shown on top with the form and tweets below it.
+An error message slides down when you have not written anything or if you have exceeded the character limit.
 
-!["The homepage of Tweeter on mobile."](https://github.com/Shamayal/tweeter/blob/master/docs/error-message.png)
-
-https://github.com/Shamayal/tweeter/blob/master/docs/ezgif.com-video-to-gif.gif
+!["Can't post tweets more than 140 characters."](https://github.com/Shamayal/tweeter/blob/master/docs/error-message.gif)
 
 ## Getting Started
 
