@@ -11,7 +11,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     // assigning a variable for the tweet typed in the form
-    let tweetInput = $("#tweet-text").val();
+    const tweetInput = $("#tweet-text").val();
 
     // error messages pop up for min and max lenghts
     if (tweetInput.length >= 141) {
@@ -22,7 +22,7 @@ $(document).ready(function() {
     } else {
 
       // serialize turns set of form data into a query string
-      let data = $(this).serialize();
+      const data = $(this).serialize();
 
       // remove the error messages
       if ($(".error-message-max").first().is(":visible")) {
@@ -60,7 +60,7 @@ $(document).ready(function() {
     $('#tweets-container').empty();
     // loop through tweets and callback to createTweetElement
     for (let tweet of tweets) {
-      let $tweet = createTweetElement(tweet);
+      const $tweet = createTweetElement(tweet);
       // adds return value to tweets container
       $('#tweets-container').prepend($tweet);
     }
@@ -68,7 +68,7 @@ $(document).ready(function() {
   
   // creates the tweet element based on data in the object (example username, name, etc.)
   const createTweetElement = function(tweetData) {
-    let $tweet = `
+    const $tweet = `
     <article class="tweet">
       <header>
         <span class="icon-name">
