@@ -32,7 +32,6 @@ main {
 
 @media only screen and (min-width: 768px) {
 
-  /* display: non for nav bar */
   .layout-shifter {
     display: flex;
     flex-direction: row;
@@ -40,16 +39,18 @@ main {
   }
 
   .container {
+    width: 180%;
     margin: 50px;
   }
 
   .userHeader {
-    margin: 150px;
+    margin: 50px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   
+  /* changes the nav bar to match the header */
   body nav {
     background-color: #DC9E2A;
     background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
