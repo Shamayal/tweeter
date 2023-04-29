@@ -44,3 +44,6 @@ An error message slides down when you have not written anything or if you have e
 
 - Express
 - Node 5.10.x or above
+- Body-Parser
+- Chance
+- md5
