@@ -10,9 +10,10 @@ $(document).ready(function() {
   $(".form-bar").on("submit", function(event) {
     event.preventDefault();
 
+    // assigning a variable for the tweet typed in the form
     let tweetInput = $("#tweet-text").val();
 
-    // error if tweet more than 140 characters
+    // error messages pop up for min and max lenghts
     if (tweetInput.length >= 141) {
       $(".error-message-max").slideDown();
       // error if no input
@@ -23,7 +24,7 @@ $(document).ready(function() {
       // serialize turns set of form data into a query string
       let data = $(this).serialize();
 
-      // slide up error messages
+      // remove the error messages
       if ($(".error-message-max").first().is(":visible")) {
         $(".error-message-max").slideUp();
       }
@@ -39,6 +40,7 @@ $(document).ready(function() {
         dataType: "text",
       }).then(function() {
         loadTweets();
+        // reset the form text and counter
         $("#tweet-text").val("");
         $(".counter").val(140);
       });
@@ -46,25 +48,25 @@ $(document).ready(function() {
   });
 
   // prevent XSS with escaping
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  // loops through tweets and calls the createTweetElement for each tweet
+  // loops through data to create a new post element
   const renderTweets = function(tweets) {
-    // resets the tweets container
+    // resets the tweets container to avoid posting same tweet twice
     $('#tweets-container').empty();
     // loop through tweets and callback to createTweetElement
     for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
       // adds return value to tweets container
-      $('#tweets-container').prepend($tweet);
+      $('#tweets-container').append($tweet);
     }
   };
   
-  // creates the tweet element based on data in the object
+  // creates the tweet element based on data in the object (example username, name, etc.)
   const createTweetElement = function(tweetData) {
     let $tweet = `
     <article class="tweet">
@@ -90,15 +92,16 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  // makes requests to load tweets upon page load
+  // makes requests to load tweets upon page load and post new tweet
   const loadTweets = function() {
     $.ajax("/tweets", {
       method: "GET",
     }).then(data => {
+      // callback to the new tweet post
       renderTweets(data);
     });
 
-    // hide error messages
+    // hides error messages
     $(".error-message-max").hide();
     $(".error-message-null").hide();
   };
